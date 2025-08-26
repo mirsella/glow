@@ -239,8 +239,7 @@ macro_rules! build_extensions {
 
         let supported_extensions = $context
             .get_supported_extensions()
-            .unwrap()
-            .iter()
+            .into_iter()
             .map(|val| val.as_string().unwrap())
             .collect::<HashSet<String>>();
 
